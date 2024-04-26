@@ -33,7 +33,7 @@
     "eslint-plugin-testing-library": "^6.1.0",
     "eslint-plugin-vitest": "^0.3.8",
     "jsdom": "^22.1.0",
-    "msw": "^2.0.3",
+    "msw": "^2.2.14",
     "npm": "^10.2.2",
     "vite": "^4.4.5",
     "vitest": "^0.34.6"

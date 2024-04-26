@@ -1,8 +1,16 @@
+import { Container } from "react-bootstrap";
+import { OrderDetailsProvider } from "./context/OrderDetails";
+import { Options } from "./components/Options";
+import { SummaryForm } from "./components/SummaryForm";
+import { OrderEntry } from "./components/OrderEntry";
+
 function App() {
   return (
-    <div>
-      <h1>Sundaes on Demand</h1>
-    </div>
+    <Container>
+      <OrderDetailsProvider>
+        <OrderEntry />
+      </OrderDetailsProvider>
+    </Container>
   );
 }
 
