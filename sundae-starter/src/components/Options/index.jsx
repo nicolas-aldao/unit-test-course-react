@@ -19,10 +19,13 @@ export const Options = ({ optionType }) => {
     axios
       .get(`http://localhost:3030/${optionType}`, { signal: controller.signal })
       .then((response) => setItems(response.data))
-      .catch((error) => setError(true));
+      .catch((error) => {
+        // console.log("err ", error);
+        setError(true);
+      });
 
     // abort axios call on componentn unmount
-    return () => controller.abort();
+    // return () => controller.abort();
   }, [optionType]);
 
   if (error) return <AlertBanner />;

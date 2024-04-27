@@ -23,9 +23,9 @@ export function OrderDetailsProvider(props) {
     toppings: {}, // example: { "Gummi Bears": 1 }
   });
 
-  useEffect(() => {
-    console.log("optionCounts ", optionCounts);
-  }, [optionCounts]);
+  // useEffect(() => {
+  //   console.log("optionCounts ", optionCounts);
+  // }, [optionCounts]);
 
   function updateItemCount(itemName, newItemCount, optionType) {
     // make a copy of existing state
