@@ -1,4 +1,7 @@
+import { render, screen } from "./test-utils/testing-library-utils";
+import { userEvent } from "@testing-library/user-event";
 import { expect } from "vitest";
+import App from "./App";
 
 test("order phases for happy path", async () => {
   const user = userEvent.setup();
@@ -8,7 +11,6 @@ test("order phases for happy path", async () => {
   // destructure 'unmount' from return value to use at the end of the test
   //   const { unmount } =
   render(<App />);
-
   // add ice cream scoops and toppings
   const vanillaInput = await screen.findByRole("spinbutton", {
     name: "Vanilla",
@@ -100,3 +102,38 @@ test("order phases for happy path", async () => {
   //   unmount();
   // do we need to await anything to avoid test errorer:
 });
+
+// test("toppings header is not on summary page if no toppings ordered", async () => {
+//   const user = userEvent.setup();
+//   // render app
+//   render(<App />);
+
+//   // add ice cream scoops but no toppings
+//   const vanillaInput = await screen.findByRole("spinbutton", {
+//     name: "Vanilla",
+//   });
+//   await user.clear(vanillaInput);
+//   await user.type(vanillaInput, "1");
+
+//   const chocolateInput = await screen.findByRole("spinbutton", {
+//     name: "Chocolate",
+//   });
+//   await user.clear(chocolateInput);
+//   await user;
+
+//   // find and click order summary button
+//   const orderSummaryButton = screen.getByRole("button", {
+//     name: /order sundae/i,
+//   });
+//   await user.click(orderSummaryButton);
+
+//   const scoopHeading = screen.getByRole("heading", {
+//     name: "Scoops: $6.00",
+//   });
+//   expect(scoopHeading).toBeInTheDocument();
+
+//   const toppingsHeading = screen.queryByRole("heading", {
+//     name: /toppings/i,
+//   });
+//   expect(toppingsHeading).not.toBeInTheDocument();
+// });
